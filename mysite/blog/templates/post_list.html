@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+  <h1>My Blog</h1>
+  {% for post in posts %}
+    <h2>
+      <a href= "{{ post.get_absolute_url }}" target="_blank">{{ post.title }}</a>
+    </h2>
+    <p class="date">Published {{ post.publish }} By {{ post.author }}</p>
+    {{ post.desc|truncatewords:30|linebreaks }}
+    <hr>
+  {% endfor %}
+{% endblock body %}

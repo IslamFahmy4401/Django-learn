@@ -9,4 +9,5 @@
     {{ post.desc|truncatewords:30|linebreaks }}
     <hr>
   {% endfor %}
+  {% include "pagintaion.html" with page=posts %}
 {% endblock body %}
